@@ -126,7 +126,7 @@ namespace ProjectIgnat.WindowFolder.EmployeeFolder
                         $"'{id.ToString()}')",
                         sqlConnection);
                     sqlCommand.ExecuteNonQuery();
-                    MBClass.InfoMB("Работник добавлен");
+                    MBClass.InfoMB("Успешно добавлен");
                 }
                 catch (Exception ex)
                 {
