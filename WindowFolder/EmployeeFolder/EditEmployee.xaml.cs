@@ -144,7 +144,7 @@ namespace ProjectIgnat.WindowFolder.EmployeeFolder
                         $"Where IdEmployee='{VarialbleClass.UserId}'",
                         sqlConnection);
                     sqlCommand.ExecuteNonQuery();
-                    MBClass.InfoMB($"Данные работника " +
+                    MBClass.InfoMB($"Данные пользователя " +
                         $"успешно отредактированы");
                 }
                 catch (Exception ex)

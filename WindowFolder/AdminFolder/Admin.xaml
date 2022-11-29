@@ -46,8 +46,7 @@
                 </MenuItem>
                 <MenuItem x:Name="AddIm" 
                       Header="Добавить пользователя" Click="AddIm_Click"/>
-                <MenuItem x:Name="MenuRabIm"
-                          Header="Управление сотрудниками" Click="MenuRabIm_Click"/>
+               
             </Menu>
             <Label Content="Поиск" Grid.Row="5"
                Grid.Column="1"

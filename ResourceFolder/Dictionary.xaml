@@ -1,12 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="MainBlue" Color="#340570"/>
-    <SolidColorBrush x:Key="LightBlue" Color="#9A6AD6"/>
-    <SolidColorBrush x:Key="DarkBlue" Color="#37B6CE"/>
-    <SolidColorBrush x:Key="SeaBlue" Color="#8805A8"/>
-    <SolidColorBrush x:Key="DarkGrey" Color="#EFFD72"/>
-    <SolidColorBrush x:Key="LightGray" Color="#4D5156"/>
-    <SolidColorBrush x:Key="VeryDarkGrey" Color="#5CCCCC"/>
+    <SolidColorBrush x:Key="MainBlue" Color="Green"/>
+    <SolidColorBrush x:Key="LightBlue" Color="Black"/>
+    <SolidColorBrush x:Key="DarkBlue" Color="Black"/>
+    <SolidColorBrush x:Key="SeaBlue" Color="Black"/>
+    <SolidColorBrush x:Key="DarkGrey" Color="White"/>
+    <SolidColorBrush x:Key="LightGray" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="VeryDarkGrey" Color="White"/>
 
 
     <Style TargetType="Control" x:Key="BaseControl">

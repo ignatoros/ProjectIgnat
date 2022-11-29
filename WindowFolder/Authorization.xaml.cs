@@ -57,7 +57,10 @@ namespace ProjectIgnat.WindowFolder
                            new AdminFolder.Admin().ShowDialog();
                             break;
                         case "2":
-                         //   new Guest.EmployeeGuest().ShowDialog();
+                            new EmployeeFolder.EmployeeAdmin().ShowDialog();
+                            break;
+                        case "3":
+                            new ServiceFolder.ServiceAdmin().ShowDialog();
                             break;
                     }
                 }

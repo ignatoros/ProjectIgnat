@@ -18,9 +18,7 @@ using System.Windows.Shapes;
 
 namespace ProjectIgnat.WindowFolder.ServiceFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для EditServicePage.xaml
-    /// </summary>
+    
     public partial class EditService : Window
     {
         CBClass cB;
@@ -54,12 +52,12 @@ namespace ProjectIgnat.WindowFolder.ServiceFolder
                     $"ClientLastName='{LastNameTb.Text}'," +
                     $"ClientPhoneNumber='{NumberTb.Text}'," +
                     $"ProblemDescription='{DescriptionTb.Text}'," +
-                    $"IdStatus='{StatusСb.SelectedValue.ToString()}'" +
+                    $"IdStatus='{StatusСb.SelectedValue.ToString()}'," +
                     $"IdEmployee='{EmployeeCb.SelectedValue.ToString()}' " +
-                    $"Where IdReception='{VarialbleClass.UserId}'",
+                    $"Where IdRequest='{VarialbleClass.UserId}'",
                     sqlConnection);
                 sqlCommand.ExecuteNonQuery();
-                MBClass.InfoMB($"Данные услуги " +
+                MBClass.InfoMB($"Данные менеджера " +
                     $"успешно отредактированы");
             }
             catch (Exception ex)

@@ -172,9 +172,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ResourceFolder\ImageFolder\AuthLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="ResourceFolder\ImageFolder\Background.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ResourceFolder\ImageFolder\свернуть.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ResourceFolder\ImageFolder\AuthLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

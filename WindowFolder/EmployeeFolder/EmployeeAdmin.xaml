@@ -30,7 +30,7 @@
                Source="/ResourceFolder/ImageFolder/AuthLogo.png"
                Margin="10"/>
             <Label Style="{DynamicResource LabelLogo}"
-               Content="Панель работников" Grid.Column="2" Grid.Row="1"/>
+               Content="Меню пользователей" Grid.Column="2" Grid.Row="1"/>
             <Menu Grid.Row="3" Grid.Column="1" 
               Grid.ColumnSpan="2"
               Style="{StaticResource BaseControl}"
@@ -43,7 +43,7 @@
                           Click="BackIm_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="AddIm" 
-                      Header="Добавить работника" Click="AddIm_Click"/>
+                      Header="Добавить пользователя" Click="AddIm_Click"/>
             </Menu>
             <Label Content="Поиск" Grid.Row="5"
                Grid.Column="1"

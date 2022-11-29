@@ -10,5 +10,7 @@ namespace ProjectIgnat.ClassFolder
     {
         public static string UserId { get; set; }
         public static string EmployeeId { get; set; }
+
+        
     }
 }

@@ -5,8 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjectIgnat.WindowFolder.ServiceFolder"
       mc:Ignorable="d" 
-        MinHeight="650" MinWidth="800"
-      MaxHeight="650" MaxWidth="800"
+        Height="700" Width="900"
       Title="Авторизация"
       Loaded="Window_Loaded">
     
@@ -41,31 +40,31 @@
             <Label Grid.Row="2" Grid.Column="1"
                    Content="Имя" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="NameTb" Grid.Row="2" Grid.Column="2"
-                     Foreground="White"/>
+                    />
             <Label Grid.Row="4" Grid.Column="1"
                    Content="Отчество" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="SecondNameTb" Grid.Row="4" Grid.Column="2"
-                     Foreground="White"/>
+                    />
             <Label Content="Фамилия" Grid.Row="6"
                    Grid.Column="1" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="LastNameTb" Grid.Row="6" Grid.Column="2"
-                     Foreground="White"/>
+                  />
             <Label Grid.Row="8" Grid.Column="1"
                    Content="Телефон" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="NumberTb" Grid.Row="8" Grid.Column="2"
-                     Foreground="White"/>
+                     />
             <Label Grid.Row="2" Grid.Column="3"
                    Content="Описание" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="DescriptionTb" Grid.Row="2" Grid.Column="4"
-                     Foreground="White"/>
+                    />
             <Label Grid.Row="4" Grid.Column="3"
                    Content="Статус" Style="{StaticResource NormalLabel}"/>
-            <ComboBox x:Name="StatusСb" Grid.Row="4" Grid.Column="4"
-                     Foreground="White"/>
-            <Label Content="Сотрудник" Grid.Row="6"
+            <ComboBox x:Name="StatusСb" Grid.Row="4" Grid.Column="4" Margin="10"
+                     />
+            <Label Content="Менеджер" Grid.Row="6"
                    Grid.Column="3" Style="{StaticResource NormalLabel}"/>
-            <ComboBox x:Name="EmployeeCb" Grid.Row="6" Grid.Column="4"
-                     Foreground="White"/>
+            <ComboBox x:Name="EmployeeCb" Grid.Row="6" Grid.Column="4" Margin="10"
+                    />
             <StackPanel Grid.Row="10" Grid.Column="1"
                         Grid.ColumnSpan="4"
                         Margin="50,0,50,0">

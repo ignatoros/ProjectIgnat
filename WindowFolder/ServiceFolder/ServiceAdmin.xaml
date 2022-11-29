@@ -31,7 +31,7 @@
                Source="/ResourceFolder/ImageFolder/AuthLogo.png"
                Margin="10"/>
             <Label Style="{DynamicResource LabelLogo}"
-               Content="Список заявок" Grid.Column="2" Grid.Row="1"/>
+               Content="Меню менеджера" Grid.Column="2" Grid.Row="1"/>
             <Menu Grid.Row="3" Grid.Column="1" 
               Grid.ColumnSpan="2"
               Style="{StaticResource BaseControl}"
@@ -75,16 +75,16 @@
                     <DataGridTextColumn Header="Номер"
                                     Binding="{Binding ClientPhoneNumber}"
                                     Width="*"/>
-                    <DataGridTextColumn Header="Описание проб."
+                    <DataGridTextColumn Header="Качество."
                                     Binding="{Binding ProblemDescription}"
                                     Width="*"/>
                     <DataGridTextColumn Header="Статус"
                                     Binding="{Binding StatusName}"
                                     Width="*"/>
-                    <DataGridTextColumn Header="Имя работ."
+                    <DataGridTextColumn Header="Имя менедж."
                                     Binding="{Binding EmployeeName}"
                                     Width="*"/>
-                    <DataGridTextColumn Header="Фамилия работ."
+                    <DataGridTextColumn Header="Фамилия менедж."
                                     Binding="{Binding EmployeeLastName}"
                                     Width="*"/>
                 </DataGrid.Columns>

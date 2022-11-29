@@ -33,11 +33,11 @@
             <Label Grid.Row="2" Grid.Column="1"
                    Content="Логин" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="LoginTb" Grid.Row="2" Grid.Column="2"
-                     Foreground="White"/>
+                   />
             <Label Grid.Row="4" Grid.Column="1"
                    Content="Пароль" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="PasswordTb" Grid.Row="4" Grid.Column="2"
-                     Foreground="White"/>
+                    />
             <StackPanel Grid.Row="6" Grid.Column="1"
                         Grid.ColumnSpan="2"
                         Margin="50,20,50,0">
