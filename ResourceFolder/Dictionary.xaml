@@ -57,7 +57,7 @@
            BasedOn="{StaticResource BaseControl}">
         <Style.Resources>
             <Style TargetType="Border">
-                <Setter Property="CornerRadius" Value="7"/>
+                <Setter Property="CornerRadius" Value="0"/>
             </Style>
         </Style.Resources>
     </Style>

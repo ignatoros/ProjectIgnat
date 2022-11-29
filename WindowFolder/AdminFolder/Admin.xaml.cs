@@ -16,12 +16,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.AdminPageFolder
+namespace ProjectIgnat.WindowFolder.AdminFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для AdminPage.xaml
-    /// </summary>
-    public partial class AdminPage : Page
+    
+    public partial class Admin : Window
     {
         SqlConnection sqlConnection = new SqlConnection(
             @"Data Source=(local)\SQLEXPRESS;" +
@@ -29,7 +27,7 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
             "Integrated Security=True");
         DGClass dG;
     
-        public AdminPage()
+        public Admin()
         {
             InitializeComponent();
             dG = new DGClass(ListUserDG);
@@ -37,7 +35,7 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
 
         private void BackIm_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AuthorizationPage());
+            new Authorization().ShowDialog();
         }
 
         private void ListUserDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -51,7 +49,7 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
                 try
                 {
                     VarialbleClass.UserId = dG.SelectId();
-                    StartWindow.OpenPage(new EditUserPage());
+                    new EditUser().ShowDialog();
                     dG.LoadDG("Select * From dbo.[User]");
                 }
                 catch (Exception ex)
@@ -69,17 +67,17 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
 
         private void AddIm_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AddUserPage());
+            new AddUser().ShowDialog();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dG.LoadDG("SELECT * From dbo.[User]");
         }
 
         private void MenuRabIm_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new EmployeeFolder.EmployeeAdminPage());
+            new EmployeeFolder.EmployeeAdmin().ShowDialog();
         }
     }
 }

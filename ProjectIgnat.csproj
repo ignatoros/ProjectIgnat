@@ -63,63 +63,56 @@
     <Compile Include="ClassFolder\DGClass.cs" />
     <Compile Include="ClassFolder\MBClass.cs" />
     <Compile Include="ClassFolder\VarialbleClass.cs" />
-    <Compile Include="PageFolder\ServiceFolder\AddServicePage.xaml.cs">
-      <DependentUpon>AddServicePage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\ServiceFolder\AddService.xaml.cs">
+      <DependentUpon>AddService.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\ServiceFolder\EditServicePage.xaml.cs">
-      <DependentUpon>EditServicePage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\ServiceFolder\EditService.xaml.cs">
+      <DependentUpon>EditService.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\ServiceFolder\ServiceAdminPage.xaml.cs">
-      <DependentUpon>ServiceAdminPage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\ServiceFolder\ServiceAdmin.xaml.cs">
+      <DependentUpon>ServiceAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowFolder\StartWindow.xaml.cs">
-      <DependentUpon>StartWindow.xaml</DependentUpon>
-    </Compile>
-    <Page Include="PageFolder\AdminPageFolder\AddUserPage.xaml">
+    <Page Include="WindowFolder\AdminFolder\AddUser.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\AdminPageFolder\AdminPage.xaml">
+    <Page Include="WindowFolder\AdminFolder\Admin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\AdminPageFolder\EditUserPage.xaml">
+    <Page Include="WindowFolder\AdminFolder\EditUser.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\AuthorizationPage.xaml">
+    <Page Include="WindowFolder\Authorization.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\EmployeeFolder\AddEmployeePage.xaml">
+    <Page Include="WindowFolder\EmployeeFolder\AddEmployee.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\EmployeeFolder\EditEmployeePage.xaml">
+    <Page Include="WindowFolder\EmployeeFolder\EditEmployee.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\EmployeeFolder\EmployeeAdminPage.xaml">
+    <Page Include="WindowFolder\EmployeeFolder\EmployeeAdmin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\GuestPage\EmployeeGuestPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PageFolder\RegistrationPage.xaml">
+    <Page Include="WindowFolder\Registration.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\ServiceFolder\AddServicePage.xaml">
+    <Page Include="WindowFolder\ServiceFolder\AddService.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\ServiceFolder\EditServicePage.xaml">
+    <Page Include="WindowFolder\ServiceFolder\EditService.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PageFolder\ServiceFolder\ServiceAdminPage.xaml">
+    <Page Include="WindowFolder\ServiceFolder\ServiceAdmin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -127,38 +120,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WindowFolder\StartWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PageFolder\AdminPageFolder\AddUserPage.xaml.cs">
-      <DependentUpon>AddUserPage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\AdminFolder\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\AdminPageFolder\AdminPage.xaml.cs">
-      <DependentUpon>AdminPage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\AdminFolder\Admin.xaml.cs">
+      <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\AdminPageFolder\EditUserPage.xaml.cs">
-      <DependentUpon>EditUserPage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\AdminFolder\EditUser.xaml.cs">
+      <DependentUpon>EditUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\AuthorizationPage.xaml.cs">
-      <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\Authorization.xaml.cs">
+      <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\EmployeeFolder\AddEmployeePage.xaml.cs">
-      <DependentUpon>AddEmployeePage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\EmployeeFolder\AddEmployee.xaml.cs">
+      <DependentUpon>AddEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\EmployeeFolder\EditEmployeePage.xaml.cs">
-      <DependentUpon>EditEmployeePage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\EmployeeFolder\EditEmployee.xaml.cs">
+      <DependentUpon>EditEmployee.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\EmployeeFolder\EmployeeAdminPage.xaml.cs">
-      <DependentUpon>EmployeeAdminPage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\EmployeeFolder\EmployeeAdmin.xaml.cs">
+      <DependentUpon>EmployeeAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageFolder\GuestPage\EmployeeGuestPage.xaml.cs">
-      <DependentUpon>EmployeeGuestPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PageFolder\RegistrationPage.xaml.cs">
-      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    <Compile Include="WindowFolder\Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

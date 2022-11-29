@@ -15,33 +15,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.EmployeeFolder
+namespace ProjectIgnat.WindowFolder.EmployeeFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для ReceptionAdminPage.xaml
-    /// </summary>
-    public partial class EmployeeAdminPage : Page
+    public partial class EmployeeAdmin : Window
     {
         DGClass dG;
-        public EmployeeAdminPage()
+        public EmployeeAdmin()
         {
             InitializeComponent();
             dG = new DGClass(ListUserDG);
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dG.LoadDG("SELECT * From dbo.EmployeeView");
         }
 
         private void BackIm_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AuthorizationPage());
+            new Authorization().ShowDialog();
         }
 
         private void AddIm_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AddEmployeePage());
+            new AddEmployee().ShowDialog();
         }
 
         private void ListUserDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -55,7 +52,7 @@ namespace ProjectIgnat.PageFolder.EmployeeFolder
                 try
                 {
                     VarialbleClass.UserId = dG.SelectId();
-                    StartWindow.OpenPage(new EditEmployeePage());
+                    new EditEmployee().ShowDialog();
                 }
                 catch (Exception ex)
                 {

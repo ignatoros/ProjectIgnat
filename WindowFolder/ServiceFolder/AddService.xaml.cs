@@ -16,12 +16,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.ServiceFolder
+namespace ProjectIgnat.WindowFolder.ServiceFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для AddServicePage.xaml
-    /// </summary>
-    public partial class AddServicePage : Page
+   
+    public partial class AddService : Window
     {
         CBClass cBClass;
         SqlConnection sqlConnection = new SqlConnection(
@@ -29,7 +27,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
             "Initial Catalog=IgnatProject;" +
             "Integrated Security=True");
         SqlCommand sqlCommand;
-        public AddServicePage()
+        public AddService()
         {
             InitializeComponent();
             cBClass = new CBClass();
@@ -67,10 +65,10 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new ServiceAdminPage());
+            new ServiceAdmin().ShowDialog();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cBClass.LoadCB(StatusСb, CBClass.CBType.Status);
             cBClass.LoadCB(EmployeeCb, CBClass.CBType.Employee);
@@ -78,7 +76,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new ServiceAdminPage());
+            new ServiceAdmin().ShowDialog();
         }
     }
 }

@@ -16,12 +16,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.EmployeeFolder
+namespace ProjectIgnat.WindowFolder.EmployeeFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для EditEmployeePage.xaml
-    /// </summary>
-    public partial class EditEmployeePage : Page
+    
+    public partial class AddEmployee : Window
     {
         SqlConnection sqlConnection = new SqlConnection(
             @"Data Source=(local)\SQLEXPRESS;" +
@@ -30,47 +28,16 @@ namespace ProjectIgnat.PageFolder.EmployeeFolder
         SqlCommand sqlCommand;
         CBClass cB;
         SqlDataReader dataReader;
-        private string idUser;
-        public EditEmployeePage()
+
+        public AddEmployee()
         {
             InitializeComponent();
             cB = new CBClass();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            cB.LoadCB(PostСb, CBClass.CBType.Post);
-            try
-            {
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand("Select * From dbo.Employee " +
-                    $"Where IdEmployee='{VarialbleClass.UserId}'",
-                    sqlConnection);
-                dataReader = sqlCommand.ExecuteReader();
-                dataReader.Read();
-                NameTb.Text = dataReader[1].ToString();
-                SecondNameTb.Text = dataReader[2].ToString();
-                LastNameTb.Text = dataReader[3].ToString();
-                NumberTb.Text = dataReader[4].ToString();
-                EmailTb.Text = dataReader[5].ToString();
-                PostСb.SelectedValue = dataReader[6].ToString();
-                idUser = dataReader[7].ToString();
-                sqlCommand = new SqlCommand("Select * From dbo.[User] " +
-                    $"Where IdUser='{idUser}'", sqlConnection);
-                dataReader.Close();
-                dataReader = sqlCommand.ExecuteReader();
-                dataReader.Read();
-                LoginTb.Text = dataReader[1].ToString();
-                PasswordTb.Text = dataReader[2].ToString();
-            }
-            catch (Exception ex)
-            {
-                MBClass.ErrorMB(ex);
-            }
-            finally
-            {
-                sqlConnection.Close();
-            }
+            new EmployeeAdmin().ShowDialog();
         }
 
         private void AuthBtn_Click(object sender, RoutedEventArgs e)
@@ -93,7 +60,12 @@ namespace ProjectIgnat.PageFolder.EmployeeFolder
             else if (string.IsNullOrWhiteSpace(NameTb.Text))
             {
                 MBClass.ErrorMB("Введите имя");
-                NameTb.Focus();
+                 NameTb.Focus();
+            }
+            else if (string.IsNullOrWhiteSpace(LastNameTb.Text))
+            {
+                MBClass.ErrorMB("Введите фамилию");
+                LastNameTb.Focus();
             }
             else if (PasswordTb.Text.IndexOfAny(znak.ToCharArray()) < 0)
             {
@@ -121,33 +93,40 @@ namespace ProjectIgnat.PageFolder.EmployeeFolder
             }
             else
             {
+                int? id = null;
                 try
                 {
                     sqlConnection.Open();
-                    sqlCommand =
-                        new SqlCommand("Update " +
-                        "dbo.[User] " +
-                        $"Set UserLogin ='{LoginTb.Text}'," +
-                        $"UserPassword='{PasswordTb.Text}'," +
-                        $"IdRole=2 " +
-                        $"Where IdUser='{idUser}'",
+                    sqlCommand = new SqlCommand(
+                        "Insert Into dbo.[User] " +
+                        "(UserName,UserPassword,IdRole) " +
+                        $"Values ('{LoginTb.Text}'," +
+                        $"'{PasswordTb.Text}'," +
+                        $"2)",
                         sqlConnection);
                     sqlCommand.ExecuteNonQuery();
-                    sqlCommand =
-                        new SqlCommand("Update " +
-                        "dbo.Employee " +
-                        $"Set EmployeeName='{NameTb.Text}'," +
-                        $"EmployeeSecondName='{SecondNameTb.Text}'," +
-                        $"EmployeeLastName='{SecondNameTb.Text}'," +
-                        $"EmployeeNumber='{SecondNameTb.Text}'," +
-                        $"EmployeeEmail='{SecondNameTb.Text}'," +
-                        $"IdPost='{PostСb.SelectedValue.ToString()}'," +
-                        $"IdUser='{idUser}'" +
-                        $"Where IdEmployee='{VarialbleClass.UserId}'",
+                    sqlCommand = new SqlCommand(
+                    "SELECT * From dbo.[User] " +
+                    $"Where UserName='{LoginTb.Text}'",
+                    sqlConnection);
+                    dataReader = sqlCommand.ExecuteReader();
+                    dataReader.Read();
+                    id = int.Parse(dataReader[0].ToString());
+                    dataReader.Close();
+                    sqlCommand = new SqlCommand(
+                        "Insert Into dbo.[Employee] " +
+                        "(EmployeeName,EmployeeSecondName,EmployeeLastName," +
+                        "EmployeeNumber,EmployeeEmail,IdPost,IdUser) " +
+                        $"Values ('{NameTb.Text}'," +
+                        $"'{SecondNameTb.Text}'," +
+                        $"'{LastNameTb.Text}'," +
+                        $"'{NumberTb.Text}'," +
+                         $"'{EmailTb.Text}'," +
+                        $"'{PostСb.SelectedValue.ToString()}'," +
+                        $"'{id.ToString()}')",
                         sqlConnection);
                     sqlCommand.ExecuteNonQuery();
-                    MBClass.InfoMB($"Данные работника " +
-                        $"успешно отредактированы");
+                    MBClass.InfoMB("Работник добавлен");
                 }
                 catch (Exception ex)
                 {
@@ -160,9 +139,9 @@ namespace ProjectIgnat.PageFolder.EmployeeFolder
             }
         }
 
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new EmployeeAdminPage());
+            cB.LoadCB(PostСb, CBClass.CBType.Post);
         }
     }
 }

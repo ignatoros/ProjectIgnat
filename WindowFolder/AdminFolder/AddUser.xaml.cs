@@ -1,5 +1,5 @@
 ﻿using ProjectIgnat.ClassFolder;
-using ProjectIgnat.WindowFolder;
+
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -16,12 +16,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.AdminPageFolder
+namespace ProjectIgnat.WindowFolder.AdminFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для AddUserPage.xaml
-    /// </summary>
-    public partial class AddUserPage : Page
+    
+    public partial class AddUser : Window
     {
         CBClass cBClass;
         SqlConnection sqlConnection = new SqlConnection(
@@ -29,13 +27,13 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
             "Initial Catalog=IgnatProject;" +
             "Integrated Security=True");
         SqlCommand sqlCommand;
-        public AddUserPage()
+        public AddUser()
         {
             InitializeComponent();
             cBClass = new CBClass();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cBClass.LoadCB(RoleCb, CBClass.CBType.Role);
         }
@@ -112,7 +110,9 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AdminPage());
+            new Admin().ShowDialog();
         }
+
+       
     }
 }

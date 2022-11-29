@@ -16,14 +16,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder
+namespace ProjectIgnat.WindowFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для RegistrationPage.xaml
-    /// </summary>
-    public partial class RegistrationPage : Page
+    
+    public partial class Registration : Window
     {
-        public RegistrationPage()
+        public Registration()
         {
             InitializeComponent();
         }
@@ -111,7 +109,7 @@ namespace ProjectIgnat.PageFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AuthorizationPage());
+            new Authorization().ShowDialog();
         }
     }
 }

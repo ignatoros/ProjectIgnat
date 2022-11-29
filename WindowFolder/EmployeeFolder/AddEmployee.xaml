@@ -1,20 +1,15 @@
-﻿<Page x:Class="ProjectIgnat.PageFolder.EmployeeFolder.EditEmployeePage"
+﻿<Window x:Class="ProjectIgnat.WindowFolder.EmployeeFolder.AddEmployee"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:ProjectIgnat.PageFolder.EmployeeFolder"
+      xmlns:local="clr-namespace:ProjectIgnat.WindowFolder.EmployeeFolder"
       mc:Ignorable="d" 
        MinHeight="650" MinWidth="800"
       MaxHeight="650" MaxWidth="800"
       Title="Авторизация"
-      Loaded="Page_Loaded">
-    <Border BorderBrush="{x:Null}" BorderThickness="1" CornerRadius="20"
-                  Background="{StaticResource DarkGrey}">
-        <Border.Effect>
-            <DropShadowEffect BlurRadius="35" Direction="-90"
-                              RenderingBias="Quality" ShadowDepth="4"/>
-        </Border.Effect>
+      Loaded="Window_Loaded">
+    
 
         <Grid>
             <Grid.RowDefinitions>
@@ -66,7 +61,7 @@
             <Label Grid.Row="4" Grid.Column="3"
                    Content="Должность" Style="{StaticResource NormalLabel}"/>
             <ComboBox x:Name="PostСb" Grid.Row="4" Grid.Column="4"
-                     Foreground="White"/>
+                     Foreground="Black"/>
             <Label Content="Логин" Grid.Row="6"
                    Grid.Column="3" Style="{StaticResource NormalLabel}"/>
             <TextBox x:Name="LoginTb" Grid.Row="6" Grid.Column="4"
@@ -90,5 +85,5 @@
                         Click="BackBtn_Click"/>
             </StackPanel>
         </Grid>
-    </Border>
-</Page>
+ 
+</Window>

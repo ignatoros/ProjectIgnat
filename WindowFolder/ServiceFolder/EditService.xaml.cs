@@ -16,12 +16,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.ServiceFolder
+namespace ProjectIgnat.WindowFolder.ServiceFolder
 {
     /// <summary>
     /// Логика взаимодействия для EditServicePage.xaml
     /// </summary>
-    public partial class EditServicePage : Page
+    public partial class EditService : Window
     {
         CBClass cB;
         SqlConnection sqlConnection = new SqlConnection(
@@ -30,7 +30,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
             "Integrated Security=True");
         SqlCommand sqlCommand;
         SqlDataReader dataReader;
-        public EditServicePage()
+        public EditService()
         {
             InitializeComponent();
             cB = new CBClass();
@@ -38,7 +38,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new ServiceAdminPage());
+            new ServiceAdmin().ShowDialog();
         }
 
         private void AuthBtn_Click(object sender, RoutedEventArgs e)
@@ -72,7 +72,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
             }
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cB.LoadCB(StatusСb, CBClass.CBType.Status);
             cB.LoadCB(EmployeeCb, CBClass.CBType.Employee);
@@ -104,7 +104,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new ServiceAdminPage());
+            new ServiceAdmin().ShowDialog();
         }
     }
 }

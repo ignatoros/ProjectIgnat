@@ -1,5 +1,5 @@
 ﻿using ProjectIgnat.ClassFolder;
-using ProjectIgnat.PageFolder.EmployeeFolder;
+
 using ProjectIgnat.WindowFolder;
 using System;
 using System.Collections.Generic;
@@ -16,15 +16,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.ServiceFolder
+namespace ProjectIgnat.WindowFolder.ServiceFolder
 {
     /// <summary>
     /// Логика взаимодействия для ServiceAdminPage.xaml
     /// </summary>
-    public partial class ServiceAdminPage : Page
+    public partial class ServiceAdmin : Window
     {
         DGClass dGClass;
-        public ServiceAdminPage()
+        public ServiceAdmin()
         {
             InitializeComponent();
             dGClass = new DGClass(ListUserDG);
@@ -32,12 +32,12 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
 
         private void AddIm_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AddServicePage());
+          new AddService().ShowDialog();
         }
 
         private void BackIm_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new GuestPage.EmployeeGuestPage());
+           // new Guest.EmployeeGuestPage().ShowDialog;
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
@@ -57,7 +57,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
                 try
                 {
                     VarialbleClass.UserId = dGClass.SelectId();
-                    StartWindow.OpenPage(new EditServicePage());
+                    new EditService().ShowDialog();
                 }
                 catch (Exception ex)
                 {
@@ -66,7 +66,7 @@ namespace ProjectIgnat.PageFolder.ServiceFolder
             }
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dGClass.LoadDG("Select * From dbo.RequestView");
         }

@@ -17,12 +17,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
 
-namespace ProjectIgnat.PageFolder
+namespace ProjectIgnat.WindowFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для AuthorizationPage.xaml
-    /// </summary>
-    public partial class AuthorizationPage : Page
+    
+    public partial class Authorization : Window
     {
         SqlConnection sqlConnection = new SqlConnection(
              @"Data Source=(local)\SQLEXPRESS;" +
@@ -30,7 +28,7 @@ namespace ProjectIgnat.PageFolder
             "Integrated Security=True");
         SqlCommand sqlCommand;
         SqlDataReader dataReader;
-        public AuthorizationPage()
+        public Authorization()
         {
             InitializeComponent();
         }
@@ -56,10 +54,10 @@ namespace ProjectIgnat.PageFolder
                     switch (dataReader[3].ToString())
                     {
                         case "1":
-                            StartWindow.OpenPage(new AdminPageFolder.AdminPage());
+                           new AdminFolder.Admin().ShowDialog();
                             break;
                         case "2":
-                            StartWindow.OpenPage(new GuestPage.EmployeeGuestPage());
+                         //   new Guest.EmployeeGuest().ShowDialog();
                             break;
                     }
                 }
@@ -76,7 +74,7 @@ namespace ProjectIgnat.PageFolder
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new RegistrationPage());
+            new Registration().ShowDialog();
         }     
     }
 }

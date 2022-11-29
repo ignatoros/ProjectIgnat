@@ -16,12 +16,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectIgnat.PageFolder.AdminPageFolder
+namespace ProjectIgnat.WindowFolder.AdminFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для EditUserPage.xaml
-    /// </summary>
-    public partial class EditUserPage : Page
+  
+    public partial class EditUser : Window
     {
         SqlConnection sqlConnection = new SqlConnection(
             @"Data Source=(local)\SQLEXPRESS;" +
@@ -30,7 +28,7 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
         SqlDataReader dataReader;
         SqlCommand sqlCommand;
         CBClass cBClass;
-        public EditUserPage()
+        public EditUser()
         {
             InitializeComponent();
             cBClass = new CBClass();
@@ -38,7 +36,7 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartWindow.OpenPage(new AdminPage());
+           new Admin().ShowDialog();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
@@ -113,7 +111,7 @@ namespace ProjectIgnat.PageFolder.AdminPageFolder
             }
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cBClass.LoadCB(RoleCb, CBClass.CBType.Role);
             try
